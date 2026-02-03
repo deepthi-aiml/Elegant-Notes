@@ -1,0 +1,473 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Elegant notes Design System - Premium Note App */
+
+@layer base {
+  :root {
+    /* Warm, sophisticated light theme */
+    --background: 40 20% 98%;
+    --foreground: 30 10% 12%;
+
+    --card: 40 25% 97%;
+    --card-foreground: 30 10% 12%;
+
+    --popover: 40 20% 98%;
+    --popover-foreground: 30 10% 12%;
+
+    /* Premium teal accent */
+    --primary: 168 70% 38%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 35 20% 92%;
+    --secondary-foreground: 30 10% 25%;
+
+    --muted: 35 15% 93%;
+    --muted-foreground: 30 8% 45%;
+
+    --accent: 168 50% 94%;
+    --accent-foreground: 168 70% 28%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 35 20% 88%;
+    --input: 35 20% 88%;
+    --ring: 168 70% 38%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar with glassmorphism */
+    --sidebar-background: 40 30% 96%;
+    --sidebar-foreground: 30 10% 25%;
+    --sidebar-primary: 168 70% 38%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 168 50% 94%;
+    --sidebar-accent-foreground: 168 70% 28%;
+    --sidebar-border: 35 25% 85%;
+    --sidebar-ring: 168 70% 38%;
+
+    /* Premium Note Palette - Light (24 Colors - High Distinguishability) */
+    --note-default: 40 25% 97%;
+    --note-default-border: 40 20% 85%;
+
+    --note-rose: 350 90% 95%;
+    --note-rose-border: 350 80% 88%;
+
+    --note-red: 0 90% 95%;
+    --note-red-border: 0 80% 88%;
+
+    --note-pink: 325 80% 95%;
+    --note-pink-border: 325 70% 88%;
+
+    --note-fuchsia: 300 80% 95%;
+    --note-fuchsia-border: 300 70% 88%;
+
+    --note-violet: 265 80% 95%;
+    --note-violet-border: 265 70% 88%;
+
+    --note-purple: 280 80% 95%;
+    --note-purple-border: 280 70% 88%;
+
+    --note-indigo: 235 70% 95%;
+    --note-indigo-border: 235 60% 88%;
+
+    --note-navy: 220 50% 94%;
+    --note-navy-border: 220 50% 85%;
+
+    --note-blue: 215 90% 95%;
+    --note-blue-border: 215 70% 88%;
+
+    --note-sky: 200 90% 95%;
+    --note-sky-border: 200 70% 88%;
+
+    --note-cyan: 185 80% 94%;
+    --note-cyan-border: 185 70% 85%;
+
+    --note-teal: 175 70% 94%;
+    --note-teal-border: 175 60% 85%;
+
+    --note-mint: 165 70% 95%;
+    --note-mint-border: 165 60% 88%;
+
+    --note-emerald: 155 70% 94%;
+    --note-emerald-border: 155 60% 85%;
+
+    --note-green: 120 70% 94%;
+    --note-green-border: 120 60% 85%;
+
+    --note-lime: 85 80% 94%;
+    --note-lime-border: 85 70% 85%;
+
+    --note-yellow: 55 90% 93%;
+    --note-yellow-border: 55 80% 84%;
+
+    --note-amber: 40 90% 94%;
+    --note-amber-border: 40 80% 85%;
+
+    --note-gold: 45 60% 94%;
+    --note-gold-border: 45 50% 82%;
+
+    --note-orange: 25 90% 95%;
+    --note-orange-border: 25 80% 88%;
+
+    --note-maroon: 0 45% 95%;
+    --note-maroon-border: 0 40% 88%;
+
+    --note-coffee: 30 40% 94%;
+    --note-coffee-border: 30 35% 85%;
+
+    --note-slate: 215 25% 94%;
+    --note-slate-border: 215 25% 85%;
+
+    /* Premium effects */
+    --glass-bg: 40 30% 98% / 0.8;
+    --glass-border: 0 0% 100% / 0.3;
+    --shadow-color: 30 20% 20%;
+    --glow-primary: 168 70% 50%;
+  }
+
+  .dark {
+    /* Rich, warm dark theme */
+    --background: 220 20% 8%;
+    --foreground: 40 15% 92%;
+
+    --card: 220 18% 11%;
+    --card-foreground: 40 15% 92%;
+
+    --popover: 220 18% 11%;
+    --popover-foreground: 40 15% 92%;
+
+    /* Brighter teal for dark mode */
+    --primary: 168 65% 48%;
+    --primary-foreground: 220 20% 8%;
+
+    --secondary: 220 15% 16%;
+    --secondary-foreground: 40 15% 85%;
+
+    --muted: 220 15% 15%;
+    --muted-foreground: 40 10% 55%;
+
+    --accent: 168 40% 18%;
+    --accent-foreground: 168 65% 65%;
+
+    --destructive: 0 65% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 168 65% 48%;
+
+    /* Dark sidebar */
+    --sidebar-background: 220 18% 10%;
+    --sidebar-foreground: 40 15% 85%;
+    --sidebar-primary: 168 65% 48%;
+    --sidebar-primary-foreground: 220 20% 8%;
+    --sidebar-accent: 168 30% 15%;
+    --sidebar-accent-foreground: 168 65% 65%;
+    --sidebar-border: 220 15% 16%;
+    --sidebar-ring: 168 65% 48%;
+
+    /* Premium Note Palette - Dark (24 Colors) */
+    --note-default: 220 18% 13%;
+    --note-default-border: 220 15% 18%;
+
+    --note-rose: 350 45% 20%;
+    --note-rose-border: 350 50% 35%;
+
+    --note-red: 0 45% 20%;
+    --note-red-border: 0 55% 35%;
+
+    --note-pink: 320 40% 20%;
+    --note-pink-border: 320 50% 35%;
+
+    --note-fuchsia: 300 40% 20%;
+    --note-fuchsia-border: 300 50% 35%;
+
+    --note-violet: 265 35% 20%;
+    --note-violet-border: 265 45% 35%;
+
+    --note-purple: 280 35% 20%;
+    --note-purple-border: 280 45% 35%;
+
+    --note-indigo: 230 40% 20%;
+    --note-indigo-border: 230 50% 35%;
+
+    --note-navy: 220 40% 18%;
+    --note-navy-border: 220 50% 30%;
+
+    --note-blue: 215 45% 20%;
+    --note-blue-border: 215 55% 35%;
+
+    --note-sky: 200 40% 20%;
+    --note-sky-border: 200 50% 35%;
+
+    --note-cyan: 180 45% 18%;
+    --note-cyan-border: 180 55% 30%;
+
+    --note-teal: 175 40% 18%;
+    --note-teal-border: 175 50% 30%;
+
+    --note-mint: 165 40% 18%;
+    --note-mint-border: 165 50% 30%;
+
+    --note-emerald: 155 35% 18%;
+    --note-emerald-border: 155 45% 28%;
+
+    --note-green: 120 35% 16%;
+    --note-green-border: 120 45% 28%;
+
+    --note-lime: 80 40% 18%;
+    --note-lime-border: 80 50% 30%;
+
+    --note-yellow: 50 45% 16%;
+    --note-yellow-border: 50 55% 28%;
+
+    --note-amber: 35 40% 18%;
+    --note-amber-border: 35 50% 30%;
+
+    --note-gold: 45 40% 18%;
+    --note-gold-border: 45 50% 30%;
+
+    --note-orange: 20 50% 20%;
+    --note-orange-border: 20 60% 35%;
+
+    --note-maroon: 0 35% 18%;
+    --note-maroon-border: 0 45% 30%;
+
+    --note-coffee: 25 25% 15%;
+    --note-coffee-border: 25 30% 25%;
+
+    --note-slate: 220 15% 20%;
+    --note-slate-border: 220 20% 35%;
+
+    /* Dark effects */
+    --glass-bg: 220 18% 12% / 0.9;
+    --glass-border: 0 0% 100% / 0.08;
+    --shadow-color: 220 30% 3%;
+    --glow-primary: 168 65% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+@layer components {
+
+  /* Glassmorphism effect */
+  .glass {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--glass-border));
+  }
+
+  /* Premium shadows */
+  .shadow-elegant {
+    box-shadow:
+      0 1px 2px hsl(var(--shadow-color) / 0.04),
+      0 4px 8px hsl(var(--shadow-color) / 0.04),
+      0 8px 16px hsl(var(--shadow-color) / 0.04);
+  }
+
+  .shadow-elevated {
+    box-shadow:
+      0 2px 4px hsl(var(--shadow-color) / 0.06),
+      0 8px 16px hsl(var(--shadow-color) / 0.08),
+      0 16px 32px hsl(var(--shadow-color) / 0.08);
+  }
+
+  .shadow-glow {
+    box-shadow: 0 0 24px hsl(var(--glow-primary) / 0.2);
+  }
+
+  /* Note card hover effect */
+  .note-card {
+    @apply relative overflow-hidden transition-all duration-200 ease-out;
+  }
+
+  .note-card:hover {
+    @apply shadow-elevated -translate-y-0.5;
+  }
+
+  .note-card::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-200;
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.05), transparent);
+  }
+
+  .note-card:hover::before {
+    @apply opacity-100;
+  }
+
+  /* Editor styling */
+  .editor-content {
+    @apply min-h-[200px] focus:outline-none;
+  }
+
+  .editor-content h1 {
+    @apply text-2xl font-bold mb-3;
+  }
+
+  .editor-content h2 {
+    @apply text-xl font-semibold mb-2;
+  }
+
+  .editor-content h3 {
+    @apply text-lg font-medium mb-2;
+  }
+
+  .editor-content p {
+    @apply mb-3 leading-relaxed;
+  }
+
+  .editor-content ul,
+  .editor-content ol {
+    @apply pl-6 mb-3;
+  }
+
+  .editor-content li {
+    @apply mb-1;
+  }
+
+  .editor-content code {
+    @apply bg-muted px-1.5 py-0.5 rounded text-sm font-mono;
+  }
+
+  .editor-content pre {
+    @apply bg-muted p-4 rounded-lg overflow-x-auto mb-3;
+  }
+
+  .editor-content blockquote {
+    @apply border-l-4 border-primary pl-4 italic text-muted-foreground my-4;
+  }
+
+  /* Tag styling */
+  .tag {
+    @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium transition-all duration-150;
+    @apply bg-accent text-accent-foreground hover:bg-primary hover:text-primary-foreground;
+  }
+
+  /* Scrollbar styling */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full transition-colors;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+
+  /* Empty state gradient */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary) / 0.7));
+  }
+
+  /* Action button */
+  .action-button {
+    @apply p-2 rounded-lg transition-all duration-150;
+    @apply text-muted-foreground hover:text-foreground hover:bg-accent;
+  }
+
+  .action-button.active {
+    @apply text-primary bg-accent;
+  }
+}
+
+@layer utilities {
+
+  /* Animation utilities */
+  .animate-in {
+    animation: fadeIn 0.2s ease-out;
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-8px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Stagger children animation */
+  .stagger-children>* {
+    animation: fadeIn 0.2s ease-out both;
+  }
+
+  .stagger-children>*:nth-child(1) {
+    animation-delay: 0ms;
+  }
+
+  .stagger-children>*:nth-child(2) {
+    animation-delay: 30ms;
+  }
+
+  .stagger-children>*:nth-child(3) {
+    animation-delay: 60ms;
+  }
+
+  .stagger-children>*:nth-child(4) {
+    animation-delay: 90ms;
+  }
+
+  .stagger-children>*:nth-child(5) {
+    animation-delay: 120ms;
+  }
+
+  .stagger-children>*:nth-child(6) {
+    animation-delay: 150ms;
+  }
+
+  .stagger-children>*:nth-child(7) {
+    animation-delay: 180ms;
+  }
+
+  .stagger-children>*:nth-child(8) {
+    animation-delay: 210ms;
+  }
+}
